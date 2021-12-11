@@ -1,0 +1,381 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h4> Guías</h4>
+                            <a href="/createGuide"><button type="button" class="btn btn-dark">Crear Guía</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table tablesorter " id="">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th>
+                                        Nombre
+                                    </th>
+                                    <th>
+                                        Teléfono
+                                    </th>
+                                    <th>
+                                        Artefacto
+                                    </th>
+                                    <th class="text-center">
+                                        Marca
+                                    </th>
+                                    <th>
+                                        Modelo
+                                    </th>
+                                    <th>
+                                        Descripción
+                                    </th>
+                                    <th>
+                                        Estado
+                                    </th>
+                                    <th class="text-center">
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% guias.forEach((guia) => { %>
+                                    <tr>
+                                        <td>
+                                            <%= guia.nombresC %>
+                                                <%= guia.apellidosC %>
+                                        </td>
+                                        <td>
+                                            <%= guia.telefono %>
+                                        </td>
+                                        <td>
+                                            <%= guia.artefacto %>
+                                        </td>
+                                        <td class="text-center">
+                                            <%= guia.marca %>
+                                        </td>
+                                        <td>
+                                            <%= guia.modelo %>
+                                        </td>
+                                        <td>
+                                            <%= guia.descripcion %>
+                                        </td>
+                                        <td>
+                                            <%= guia.estado %>
+                                        </td>
+                                        <td class="text-center">
+                                            <a type="button" class="btnEditar btn btn-outline-light bi bi-pencil"></a>
+                                            <a href="/borrar/<%= guia._id %>" class="btn btn-outline-danger bi bi-trash"></a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                                        <!--<tr>
+                                            <td>
+                                                Dakota Rice
+                                            </td>
+                                            <td>
+                                                968977844
+                                            </td>
+                                            <td>
+                                                TV
+                                            </td>
+                                            <td class="text-center">
+                                                LG
+                                            </td>
+                                            <td>
+                                                LG15SDAW
+                                            </td>
+                                            <td>
+                                                No enciende
+                                            </td>
+                                            <td>
+                                                En Revisión
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota Rice
+                                            </td>
+                                            <td>
+                                                968977844
+                                            </td>
+                                            <td>
+                                                TV
+                                            </td>
+                                            <td class="text-center">
+                                                LG
+                                            </td>
+                                            <td>
+                                                LG15SDAW
+                                            </td>
+                                            <td>
+                                                No enciende
+                                            </td>
+                                            <td>
+                                                En Revisión
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota Rice
+                                            </td>
+                                            <td>
+                                                968977844
+                                            </td>
+                                            <td>
+                                                TV
+                                            </td>
+                                            <td class="text-center">
+                                                LG
+                                            </td>
+                                            <td>
+                                                LG15SDAW
+                                            </td>
+                                            <td>
+                                                No enciende
+                                            </td>
+                                            <td>
+                                                En Revisión
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota Rice
+                                            </td>
+                                            <td>
+                                                968977844
+                                            </td>
+                                            <td>
+                                                TV
+                                            </td>
+                                            <td class="text-center">
+                                                LG
+                                            </td>
+                                            <td>
+                                                LG15SDAW
+                                            </td>
+                                            <td>
+                                                No enciende
+                                            </td>
+                                            <td>
+                                                En Revisión
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota Rice
+                                            </td>
+                                            <td>
+                                                968977844
+                                            </td>
+                                            <td>
+                                                TV
+                                            </td>
+                                            <td class="text-center">
+                                                LG
+                                            </td>
+                                            <td>
+                                                LG15SDAW
+                                            </td>
+                                            <td>
+                                                No enciende
+                                            </td>
+                                            <td>
+                                                En Revisión
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota Rice
+                                            </td>
+                                            <td>
+                                                968977844
+                                            </td>
+                                            <td>
+                                                TV
+                                            </td>
+                                            <td class="text-center">
+                                                LG
+                                            </td>
+                                            <td>
+                                                LG15SDAW
+                                            </td>
+                                            <td>
+                                                No enciende
+                                            </td>
+                                            <td>
+                                                En Revisión
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                            </td>
+                                        </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--Modal Editar Guia-->
+                    <div class="modal fade" id="modalGuia" tabindex="-1" aria-labelledby="modalGuia" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary text-white">
+                                    <h5 class="modal-title" id="exampleModalLabel">Editar Guía</h5>
+                                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/editar" method="POST">
+                                        <div class="form-group">
+                                            <label for="nombres_editar" class="col-form-label">Nombres</label>
+                                            <input type="text" name="nombres_editar" class="form-control" id="nombres_editar" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="col-form-label">Apellidos</label>
+                                            <input type="text" class="form-control" name="apellidos_editar" id="apellidos_editar" value=""></input>
+                                        </div>
+                                        <!--Prueba -->
+
+                                        <div class="row">
+                                            <div class="col-md-2 pr-md-1">
+                                                <div class="form-group">
+                                                    <label>Codigo Guia</label>
+                                                    <input type="text" class="form-control" placeholder="5515" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 pr-md-1">
+                                                <div class="form-group">
+                                                    <label>Nombres</label>
+                                                    <input type="text" class="form-control" placeholder="Jesús" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 pl-md-1">
+                                                <div class="form-group">
+                                                    <label>Apellidos</label>
+                                                    <input type="text" class="form-control" placeholder="Gimenez" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2 pr-md-1">
+                                                <div class="form-group">
+                                                    <label>DNI</label>
+                                                    <input type="text" class="form-control" placeholder="74447744">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 px-md-1">
+                                                <div class="form-group">
+                                                    <label>Teléfono</label>
+                                                    <input type="text" class="form-control" placeholder="985688545" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 pl-md-1">
+                                                <div class="form-group">
+                                                    <label>Dirección</label>
+                                                    <input type="text" class="form-control" placeholder="Dirección" required>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Artefacto</label>
+                                                    <input type="text" class="form-control uppercase" id="artefacto" name="artefacto" placeholder="TV" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 pr-md-1">
+                                                <div class="form-group">
+                                                    <label>Marca</label>
+                                                    <input type="text" class="form-control uppercase" id="marca" name="marca" placeholder="Marca" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 px-md-1">
+                                                <div class="form-group">
+                                                    <label>Modelo</label>
+                                                    <input type="text" class="form-control uppercase" id="modelo" name="modelo" placeholder="Modelo" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pl-md-1">
+                                                <div class="form-group">
+                                                    <label>Serie</label>
+                                                    <input type="text" class="form-control uppercase" id="serie" name="serie" placeholder="Serie">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Accesorios</label>
+                                                    <textarea rows="4" cols="80" class="form-control" placeholder="Aquí se describen los accesorios que dejó como control, cables y demás">Deja cable de corriente y control.</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Descripción</label>
+                                                    <textarea rows="4" cols="80" class="form-control" placeholder="Aquí va la descripción del problema" required>No enciende solo sale audio.</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 pr-md-1">
+                                                <div class="form-group">
+                                                    <label>Fecha Ingreso</label>
+                                                    <input type="date" class="form-control" placeholder="25/04/2022" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 px-md-1">
+                                                <div class="form-group">
+                                                    <label>Monto</label>
+                                                    <input type="text" class="form-control" placeholder="115.0" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pl-md-1">
+                                                <div class="form-group">
+                                                    <label>Estado</label><br>
+                                                    <select class="form-control" name="estado">
+                                                        <option value=""></option>
+                                                        <option value="Entregado">Entregado</option>
+                                                        <option value="En revisión">En revisión</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Fin Prueba-->
+                                    </form>
+                                </div>
+                                <!--Fin Modal Editar Guia-->
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,197 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-title"> Usuarios</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table tablesorter " id="">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th>
+                                        Nombre
+                                    </th>
+                                    <th>
+                                        Apellido
+                                    </th>
+                                    <th>
+                                        Rol
+                                    </th>
+                                    <th>
+                                        Correo
+                                    </th>
+                                    <th>
+                                        Estado
+                                    </th>
+                                    <th class="text-center">
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% usuarios.forEach((user) => { %>
+                                    <tr>
+                                        <td>
+                                            <%= user.nombres %>
+                                        </td>
+                                        <td>
+                                            <%= user.apellidos %>
+                                        </td>
+                                        <td>
+                                            <%= user.rol %>
+                                        </td>
+                                        <td>
+                                            <%= user.correo %>
+                                        </td>
+                                        <td>
+                                            <%= user.estado %>
+                                        </td>
+                                        <td class="text-center">
+                                            <button><i class="tim-icons icon-badge"></i></button>
+                                            <button><i class="tim-icons icon-pencil"></i></button>
+                                            <button><i class="tim-icons icon-trash-simple"></i></button>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                                        <!--<tr>
+                                        <td>
+                                            Dakota
+                                        </td>
+                                        <td>
+                                            Johnson
+                                        </td>
+                                        <td>
+                                            Administrador
+                                        </td>
+                                        <td>
+                                            administrador@admin.com
+                                        </td>
+                                        <td>
+                                            Activo
+                                        </td>
+                                        <td class="text-center">
+                                            <button><i class="tim-icons icon-badge"></i></button>
+                                            <button><i class="tim-icons icon-pencil"></i></button>
+                                            <button><i class="tim-icons icon-trash-simple"></i></button>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota
+                                            </td>
+                                            <td>
+                                                Johnson
+                                            </td>
+                                            <td>
+                                                Administrador
+                                            </td>
+                                            <td>
+                                                administrador@admin.com
+                                            </td>
+                                            <td>
+                                                Activo
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                                <button><i class="tim-icons icon-trash-simple"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota
+                                            </td>
+                                            <td>
+                                                Johnson
+                                            </td>
+                                            <td>
+                                                Administrador
+                                            </td>
+                                            <td>
+                                                administrador@admin.com
+                                            </td>
+                                            <td>
+                                                Activo
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                                <button><i class="tim-icons icon-trash-simple"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota
+                                            </td>
+                                            <td>
+                                                Johnson
+                                            </td>
+                                            <td>
+                                                Administrador
+                                            </td>
+                                            <td>
+                                                administrador@admin.com
+                                            </td>
+                                            <td>
+                                                Activo
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                                <button><i class="tim-icons icon-trash-simple"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota
+                                            </td>
+                                            <td>
+                                                Johnson
+                                            </td>
+                                            <td>
+                                                Administrador
+                                            </td>
+                                            <td>
+                                                administrador@admin.com
+                                            </td>
+                                            <td>
+                                                Activo
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                                <button><i class="tim-icons icon-trash-simple"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Dakota
+                                            </td>
+                                            <td>
+                                                Johnson
+                                            </td>
+                                            <td>
+                                                Administrador
+                                            </td>
+                                            <td>
+                                                administrador@admin.com
+                                            </td>
+                                            <td>
+                                                Activo
+                                            </td>
+                                            <td class="text-center">
+                                                <button><i class="tim-icons icon-badge"></i></button>
+                                                <button><i class="tim-icons icon-pencil"></i></button>
+                                                <button><i class="tim-icons icon-trash-simple"></i></button>
+                                            </td>
+                                        </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

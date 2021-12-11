@@ -1,0 +1,64 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-title"> Almacén</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table tablesorter " id="">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th>
+                                        Codigo
+                                    </th>
+                                    <th>
+                                        Nombre
+                                    </th>
+                                    <th class="text-center">
+                                        Precio Compra
+                                    </th>
+                                    <th>
+                                        Precio #1
+                                    </th>
+                                    <th class="text-center">
+                                        Precio Venta
+                                    </th>
+                                    <th class="text-center">
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% productos.forEach((producto) => { %>
+                                    <tr>
+                                        <td>
+                                            <%= producto.codigo %>
+                                        </td>
+                                        <td>
+                                            <%= producto.nombre %>
+                                        </td>
+                                        <td class="text-center">
+                                            <%= producto.precioCompra %>
+                                        </td>
+                                        <td class="numberF" id="precioUno" name="precioUno">
+                                            <%= producto.precioCompra*1.2 %>
+                                        </td>
+                                        <td class="text-center">
+                                            <%= producto.precioVenta %>
+                                        </td>
+                                        <td class="text-center">
+                                            <button><i class="tim-icons icon-pencil"></i></button>
+                                            <button><i class="tim-icons icon-trash-simple"></i></button>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
