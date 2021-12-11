@@ -27,6 +27,7 @@ app.use(productos)
 app.get('/', (req, res) => {
     res.send('Dashboard is running')
 })*/
-app.listen(3000, () => {
-    console.log('Server running ok http://localhost:3000')
+const port = process.env.APP_PORT || 3000;
+app.listen(port, () => {
+    console.log('Server running ok on: ', port)
 })
