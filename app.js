@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     res.send('Dashboard is running')
 })*/
 const host = '0.0.0.0';
-const port = process.env.APP_PORT || 3000;
+const port = process.env.APP_PORT || 5000;
 app.listen(port, host, () => {
     console.log('Server running ok on: ', port)
 })
