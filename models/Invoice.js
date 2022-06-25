@@ -17,7 +17,9 @@ const invoiceSchema = new Schema({
     fecha_ing: String,
     estado: String,
     monto: Number,
+    fecha_entrega: String,
+    diagnostico: String,
     imgURL: String
-}, { versionKey: false })
+}, { timestamps: true, versionKey: false })
 
 module.exports = mongoose.model('guias', invoiceSchema)

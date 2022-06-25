@@ -32,6 +32,10 @@ const vistaCreateGuide = (req, res) => {
     res.render('createGuide')
 }
 
+const vistaEditGuide = (req, res) => {
+    res.render('editGuide')
+}
+
 module.exports = {
     vistaPrincipal,
     vistaTables,
@@ -40,5 +44,6 @@ module.exports = {
     vistaProfile,
     vistaIcons,
     /*vistaUsers,*/
-    vistaCreateGuide
+    vistaCreateGuide,
+    vistaEditGuide
 }

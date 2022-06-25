@@ -6,24 +6,24 @@
                     <h5 class="title">Guia</h5>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="/create" method="POST">
                         <div class="row">
                             <div class="col-md-2 pr-md-1">
                                 <div class="form-group">
                                     <label>Codigo Guia</label>
-                                    <input type="text" class="form-control" placeholder="5515" required>
+                                    <input type="text" class="form-control" name="codigo" id="codigo" placeholder="5515" required>
                                 </div>
                             </div>
                             <div class="col-md-5 pr-md-1">
                                 <div class="form-group">
                                     <label>Nombres</label>
-                                    <input type="text" class="form-control" placeholder="Jesús" required>
+                                    <input type="text" class="form-control" name="nombresC" id="nombresC" placeholder="Jesús" required>
                                 </div>
                             </div>
                             <div class="col-md-5 pl-md-1">
                                 <div class="form-group">
                                     <label>Apellidos</label>
-                                    <input type="text" class="form-control" placeholder="Gimenez" required>
+                                    <input type="text" class="form-control" name="apellidosC" id="apellidosC" placeholder="Gimenez" required>
                                 </div>
                             </div>
                         </div>
@@ -31,19 +31,19 @@
                             <div class="col-md-2 pr-md-1">
                                 <div class="form-group">
                                     <label>DNI</label>
-                                    <input type="text" class="form-control" placeholder="74447744">
+                                    <input type="text" class="form-control" name="dni" id="dni" placeholder="74447744">
                                 </div>
                             </div>
                             <div class="col-md-2 px-md-1">
                                 <div class="form-group">
                                     <label>Teléfono</label>
-                                    <input type="text" class="form-control" placeholder="985688545" required>
+                                    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="985688545" required>
                                 </div>
                             </div>
                             <div class="col-md-8 pl-md-1">
                                 <div class="form-group">
                                     <label>Dirección</label>
-                                    <input type="text" class="form-control" placeholder="Dirección" required>
+                                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" required>
 
                                 </div>
                             </div>
@@ -80,13 +80,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Accesorios</label>
-                                    <textarea rows="4" cols="80" class="form-control" placeholder="Aquí se describen los accesorios que dejó como control, cables y demás">Deja cable de corriente y control.</textarea>
+                                    <textarea rows="4" cols="80" class="form-control" name="accesorios" id="accesorios" placeholder="Aquí se describen los accesorios que dejó como control, cables y demás">Deja cable de corriente y control.</textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Descripción</label>
-                                    <textarea rows="4" cols="80" class="form-control" placeholder="Aquí va la descripción del problema" required>No enciende solo sale audio.</textarea>
+                                    <textarea rows="4" cols="80" class="form-control" name="descripcion" id="descripcion" placeholder="Aquí va la descripción del problema" required>No enciende solo sale audio.</textarea>
                                 </div>
                             </div>
                         </div>
@@ -94,19 +94,19 @@
                             <div class="col-md-4 pr-md-1">
                                 <div class="form-group">
                                     <label>Fecha Ingreso</label>
-                                    <input type="date" class="form-control" placeholder="25/04/2022" required>
+                                    <input type="date" class="form-control" name="fechaing" id="fechaing" placeholder="25/04/2022" required>
                                 </div>
                             </div>
                             <div class="col-md-4 px-md-1">
                                 <div class="form-group">
                                     <label>Monto</label>
-                                    <input type="text" class="form-control" placeholder="115.0" required>
+                                    <input type="text" name="monto" id="monto" class="form-control" placeholder="115.0" required>
                                 </div>
                             </div>
                             <div class="col-md-4 pl-md-1">
                                 <div class="form-group">
                                     <label>Estado</label><br>
-                                    <select class="form-control" name="estado">
+                                    <select class="form-control" name="estado" id="estado">
                                         <option value=""></option>
                                         <option value="Entregado">Entregado</option>
                                         <option value="En revisión">En revisión</option>
@@ -114,11 +114,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-fill btn-primary">Registrar</button>
+                        </div>
                     </form>
                 </div>
-                <div class="card-footer">
+                <!--<div class="card-footer">
                     <button type="submit" class="btn btn-fill btn-primary">Registrar</button>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="col-md-4">

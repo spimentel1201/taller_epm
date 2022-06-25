@@ -67,8 +67,8 @@
                                             <%= guia.estado %>
                                         </td>
                                         <td class="text-center">
-                                            <a type="button" class="btnEditar btn btn-outline-light bi bi-pencil"></a>
-                                            <a href="/borrar/<%= guia._id %>" class="btn btn-outline-danger bi bi-trash"></a>
+                                            <a type="button" href="/editGuide/<%= guia._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="fas fa-edit"></i></a>
+                                            <a type="button" href="/deleteGuide/<%= guia._id %>" class="btn btn-outline-danger bi bi-trash btn-sm"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <% }) %>
