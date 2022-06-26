@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table tablesorter " id="">
+                        <table id="products" class="table tablesorter " id="">
                             <thead class=" text-primary">
                                 <tr>
                                     <th>
@@ -49,8 +49,8 @@
                                             <%= producto.precioVenta %>
                                         </td>
                                         <td class="text-center">
-                                            <button><i class="tim-icons icon-pencil"></i></button>
-                                            <button><i class="tim-icons icon-trash-simple"></i></button>
+                                            <a type="button" href="/editProduct/<%= producto._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="fas fa-edit"></i></a>
+                                            <a type="button" href="/deleteProduct/<%= producto._id %>" class="btn btn-outline-danger bi bi-trash btn-sm"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <% }) %>

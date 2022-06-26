@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table tablesorter " id="">
+                        <table class="table tablesorter " id="guides">
                             <thead class=" text-primary">
                                 <tr>
                                     <th>
@@ -67,176 +67,19 @@
                                             <%= guia.estado %>
                                         </td>
                                         <td class="text-center">
-                                            <a type="button" href="/editGuide/<%= guia._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="fas fa-edit"></i></a>
-                                            <a type="button" href="/deleteGuide/<%= guia._id %>" class="btn btn-outline-danger bi bi-trash btn-sm"><i class="far fa-trash-alt"></i></a>
+                                            <a type="button" href="/editGuide/<%= guia._id %>" class="bi bi-pencil btn-sm"><i class="fas fa-edit"></i></a>
+                                            <a type="button" href="/deleteGuide/<%= guia._id %>" class=" bi bi-trash btn-sm"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <% }) %>
-                                        <!--<tr>
-                                            <td>
-                                                Dakota Rice
-                                            </td>
-                                            <td>
-                                                968977844
-                                            </td>
-                                            <td>
-                                                TV
-                                            </td>
-                                            <td class="text-center">
-                                                LG
-                                            </td>
-                                            <td>
-                                                LG15SDAW
-                                            </td>
-                                            <td>
-                                                No enciende
-                                            </td>
-                                            <td>
-                                                En Revisión
-                                            </td>
-                                            <td class="text-center">
-                                                <button><i class="tim-icons icon-badge"></i></button>
-                                                <button><i class="tim-icons icon-pencil"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Dakota Rice
-                                            </td>
-                                            <td>
-                                                968977844
-                                            </td>
-                                            <td>
-                                                TV
-                                            </td>
-                                            <td class="text-center">
-                                                LG
-                                            </td>
-                                            <td>
-                                                LG15SDAW
-                                            </td>
-                                            <td>
-                                                No enciende
-                                            </td>
-                                            <td>
-                                                En Revisión
-                                            </td>
-                                            <td class="text-center">
-                                                <button><i class="tim-icons icon-badge"></i></button>
-                                                <button><i class="tim-icons icon-pencil"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Dakota Rice
-                                            </td>
-                                            <td>
-                                                968977844
-                                            </td>
-                                            <td>
-                                                TV
-                                            </td>
-                                            <td class="text-center">
-                                                LG
-                                            </td>
-                                            <td>
-                                                LG15SDAW
-                                            </td>
-                                            <td>
-                                                No enciende
-                                            </td>
-                                            <td>
-                                                En Revisión
-                                            </td>
-                                            <td class="text-center">
-                                                <button><i class="tim-icons icon-badge"></i></button>
-                                                <button><i class="tim-icons icon-pencil"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Dakota Rice
-                                            </td>
-                                            <td>
-                                                968977844
-                                            </td>
-                                            <td>
-                                                TV
-                                            </td>
-                                            <td class="text-center">
-                                                LG
-                                            </td>
-                                            <td>
-                                                LG15SDAW
-                                            </td>
-                                            <td>
-                                                No enciende
-                                            </td>
-                                            <td>
-                                                En Revisión
-                                            </td>
-                                            <td class="text-center">
-                                                <button><i class="tim-icons icon-badge"></i></button>
-                                                <button><i class="tim-icons icon-pencil"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Dakota Rice
-                                            </td>
-                                            <td>
-                                                968977844
-                                            </td>
-                                            <td>
-                                                TV
-                                            </td>
-                                            <td class="text-center">
-                                                LG
-                                            </td>
-                                            <td>
-                                                LG15SDAW
-                                            </td>
-                                            <td>
-                                                No enciende
-                                            </td>
-                                            <td>
-                                                En Revisión
-                                            </td>
-                                            <td class="text-center">
-                                                <button><i class="tim-icons icon-badge"></i></button>
-                                                <button><i class="tim-icons icon-pencil"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Dakota Rice
-                                            </td>
-                                            <td>
-                                                968977844
-                                            </td>
-                                            <td>
-                                                TV
-                                            </td>
-                                            <td class="text-center">
-                                                LG
-                                            </td>
-                                            <td>
-                                                LG15SDAW
-                                            </td>
-                                            <td>
-                                                No enciende
-                                            </td>
-                                            <td>
-                                                En Revisión
-                                            </td>
-                                            <td class="text-center">
-                                                <button><i class="tim-icons icon-badge"></i></button>
-                                                <button><i class="tim-icons icon-pencil"></i></button>
-                                            </td>
-                                        </tr>-->
                             </tbody>
                         </table>
+
                     </div>
+
+
+
+
                     <!--Modal Editar Guia-->
                     <div class="modal fade" id="modalGuia" tabindex="-1" aria-labelledby="modalGuia" aria-hidden="true">
                         <div class="modal-dialog modal-lg">

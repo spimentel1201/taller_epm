@@ -49,9 +49,9 @@
                                             <%= user.estado %>
                                         </td>
                                         <td class="text-center">
-                                            <button><i class="tim-icons icon-badge"></i></button>
-                                            <button><i class="tim-icons icon-pencil"></i></button>
-                                            <button><i class="tim-icons icon-trash-simple"></i></button>
+                                            <a type="button" href="/showUser/<%= user._id %>" class="btn btn-outline-light bi bi-eye btn-sm"><i class="fas fa-eye"></i></a>
+                                            <a type="button" href="/editUser/<%= user._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="far fa-edit"></i></a>
+                                            <a type="button" href="/deleteUser/<%= user._id %>" class="btn btn-outline-danger bi bi-trash btn-sm"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <% }) %>

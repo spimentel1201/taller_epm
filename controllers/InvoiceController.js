@@ -1,4 +1,20 @@
 const Invoice = require('../models/Invoice')
+module.exports.mostrar2 = (req, res, next) => {
+    var perPage = 9
+    var page = req.params.page || 1
+    Invoice.find({}).skip((perPage * page) - perPage)
+        .limit(perPage)
+        .exec(function(err, guias) {
+            Invoice.count().exec(function(err, count) {
+                if (err) return next(err)
+                res.render('guides', {
+                    guias: guias,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                })
+            })
+        })
+}
 module.exports.mostrar = (req, res) => {
     Invoice.find({}, (error, guias) => {
         if (error) {
@@ -7,14 +23,14 @@ module.exports.mostrar = (req, res) => {
             })
         }
         return res.render('guides', { guias: guias })
-    }).limit(10)
+    })
 }
 module.exports.create = async(req, res) => {
 
     try {
-        const { codigo, nombresC, apellidosC, dni, telefono, direccion, artefacto, marca, modelo, serie, accesorios, descripcion, fechaing, monto, estado } = req.body
+        const { codigo, nombresC, apellidosC, dni, telefono, direccion, artefacto, marca, modelo, serie, accesorios, descripcion, fecha_ing, monto, estado, fecha_entrega } = req.body
 
-        const guide = new Invoice({ codigo, nombresC, apellidosC, dni, telefono, direccion, artefacto, marca, modelo, serie, accesorios, descripcion, fechaing, monto, estado });
+        const guide = new Invoice({ codigo, nombresC, apellidosC, dni, telefono, direccion, artefacto, marca, modelo, serie, accesorios, descripcion, fecha_ing, monto, estado, fecha_entrega });
 
         //res.status(201).json(guide)
         //const guide = Invoice(req.body)
