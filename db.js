@@ -4,7 +4,6 @@ const url = 'mongodb+srv://epimentel2:q1w2e3r4t5@cluster0.3u70z.mongodb.net/db_t
 const url2 = 'mongodb+srv://epimentel2:lQeSdjomuxyCyTlb@epimentelcluster.iwjci.mongodb.net/epimentel_database?retryWrites=true&w=majority'
 mongoose.connect(url2, {
     useUnifiedTopology: true,
-    useFindAndModify: true,
 })
 
 const db = mongoose.connection
