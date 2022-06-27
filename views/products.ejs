@@ -20,10 +20,10 @@
                                         Precio Compra
                                     </th>
                                     <th>
-                                        Precio #1
+                                        Precio Venta
                                     </th>
                                     <th class="text-center">
-                                        Precio Venta
+                                        Precio Venta #2
                                     </th>
                                     <th class="text-center">
                                         Acciones
@@ -40,13 +40,13 @@
                                             <%= producto.nombre %>
                                         </td>
                                         <td class="text-center">
-                                            <%= producto.precioCompra %>
-                                        </td>
-                                        <td class="numberF" id="precioUno" name="precioUno">
-                                            <%= producto.precioCompra*1.2 %>
+                                            <%= producto.precio_compra %>
                                         </td>
                                         <td class="text-center">
-                                            <%= producto.precioVenta %>
+                                            <%= producto.precio_v1 %>
+                                        </td>
+                                        <td class="text-center">
+                                            <%= producto.precio_v2 %>
                                         </td>
                                         <td class="text-center">
                                             <a type="button" href="/editProduct/<%= producto._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="fas fa-edit"></i></a>

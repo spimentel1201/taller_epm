@@ -1,5 +1,5 @@
 function fixN() {
     var numberd = document.getElementById("precioUno").value;
     var numberdfix = Number(numberd);
-    var final = numberdfix.toFixed(2)
+    document.getElementById("precioUno").value = Math.round(numberdfix * 100) / 100
 }
