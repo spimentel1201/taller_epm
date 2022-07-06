@@ -280,7 +280,23 @@
 
     <script>
         $(document).ready(function() {
-            $('#products').DataTable();
+            $('#products').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "No se encontraron registros - sorry",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    "search": "Buscar:",
+                    "loadingRecords": "Cargando...",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                }
+            });
         });
         $(document).ready(function() {
             $('#guides').DataTable({
