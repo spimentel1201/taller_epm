@@ -615,6 +615,15 @@ pre code {
     margin-left: auto;
 }
 
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
@@ -15652,6 +15661,7 @@ hr {
     border-color: rgba(255, 255, 255, 0.1);
     padding: 12px 7px;
     vertical-align: middle;
+    text-transform: uppercase;
 }
 
 .table.table-shopping tbody tr:last-child td {
@@ -15663,7 +15673,7 @@ hr {
 }
 
 .table .td-price {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 300;
     margin-top: 5px;
     position: relative;
@@ -15674,8 +15684,8 @@ hr {
 .table .td-total {
     font-weight: 600;
     font-size: 0.8125rem;
-    padding-top: 20px;
-    text-align: right;
+    padding-top: 10px;
+    text-align: left;
 }
 
 .table .td-actions .btn {
@@ -15683,7 +15693,7 @@ hr {
 }
 
 .table>tbody>tr {
-    position: relative;
+    position: static;
 }
 
 .table>tfoot>tr {

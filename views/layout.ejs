@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -29,10 +29,10 @@
     -->
             <div class="sidebar-wrapper ">
                 <div class="logo ">
-                    <a href="javascript:void(0) " class="simple-text logo-mini ">
+                    <a href="" class="simple-text logo-mini ">
             EP
           </a>
-                    <a href="javascript:void(0) " class="simple-text logo-normal ">
+                    <a href="" class="simple-text logo-normal ">
             MENU
           </a>
                 </div>
@@ -109,22 +109,6 @@
                                 </button>
                             </li>
                             <li class="dropdown nav-item ">
-                                <a href="javascript:void(0) " class="dropdown-toggle nav-link " data-toggle="dropdown ">
-                                    <div class="notification d-none d-lg-block d-xl-block "></div>
-                                    <i class="tim-icons icon-bell-55 "></i>
-                                    <p class="d-lg-none ">
-                                        Notificaciones
-                                    </p>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-right dropdown-navbar ">
-                                    <li class="nav-link "><a href="# " class="nav-item dropdown-item ">Mike John responded to your email</a></li>
-                                    <li class="nav-link "><a href="javascript:void(0) " class="nav-item dropdown-item ">You have 5 more tasks</a></li>
-                                    <li class="nav-link "><a href="javascript:void(0) " class="nav-item dropdown-item ">Your friend Michael is in town</a></li>
-                                    <li class="nav-link "><a href="javascript:void(0) " class="nav-item dropdown-item ">Another notification</a></li>
-                                    <li class="nav-link "><a href="javascript:void(0) " class="nav-item dropdown-item ">Another one</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown nav-item ">
                                 <a href="# " class="dropdown-toggle nav-link " data-toggle="dropdown ">
                                     <div class="photo ">
                                         <i class="tim-icons icon-single-02 "></i>
@@ -161,32 +145,6 @@
                         </div>
                     </div>
                 </footer>
-        </div>
-    </div>
-    <div class="fixed-plugin ">
-        <div class="dropdown show-dropdown ">
-            <a href="# " data-toggle="dropdown ">
-                <i class="fa fa-cog fa-2x "> </i>
-            </a>
-            <ul class="dropdown-menu ">
-                <li class="header-title "> Sidebar Background</li>
-                <li class="adjustments-line ">
-                    <a href="javascript:void(0) " class="switch-trigger background-color ">
-                        <div class="badge-colors text-center ">
-                            <span class="badge filter badge-primary active " data-color="primary "></span>
-                            <span class="badge filter badge-info " data-color="blue "></span>
-                            <span class="badge filter badge-success " data-color="green "></span>
-                        </div>
-                        <div class="clearfix "></div>
-                    </a>
-                </li>
-                <li class="adjustments-line text-center color-change ">
-                    <span class="color-label ">Modo Claro</span>
-                    <span class="badge light-badge mr-2 "></span>
-                    <span class="badge dark-badge ml-2 "></span>
-                    <span class="color-label ">Modo Oscuro</span>
-                </li>
-            </ul>
         </div>
     </div>
     <!--   Core JS Files   -->
@@ -325,7 +283,26 @@
             $('#products').DataTable();
         });
         $(document).ready(function() {
-            $('#guides').DataTable();
+            $('#guides').DataTable({
+                order: [
+                    [0, 'desc']
+                ],
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "No se encontraron registros - sorry",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    "search": "Buscar:",
+                    "loadingRecords": "Cargando...",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                }
+            });
         });
     </script>
 

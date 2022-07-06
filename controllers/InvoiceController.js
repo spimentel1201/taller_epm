@@ -36,7 +36,7 @@ module.exports.create = async(req, res) => {
         //const guide = Invoice(req.body)
         const guideSaved = await guide.save()
         console.log(guide)
-        return res.redirect('/')
+        return res.redirect('/guides')
     } catch (error) {
         console.log(error)
     }

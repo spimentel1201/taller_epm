@@ -110,10 +110,9 @@
                                     <div class="form-group ">
                                         <label>Estado</label><br>
                                         <select class="form-control " name="estado" id="estado">
-                                        <option value="<%= guias.estado %>"></option>
-                                        <option value="Entregado ">Entregado</option>
-                                        <option value="En revisión ">En revisión</option>
-                                    </select>
+                                            <option <%= guias.estado== 'Entregado' ? "selected" : '' %>value="Entregado" >Entregado</option>
+                                            <option <%= guias.estado== 'en revision' ? "selected" : '' %>value="En revisión" >En revisión</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +127,7 @@
                                 <div class="col-md-6">
                                     <div class=" form-group ">
                                         <label>Diagnostico</label>
-                                        <textarea rows="4 " cols="80 " class="form-control " name="diagnostico" id="diagnostico"><%= guias.diagnostico %></textarea>
+                                        <textarea rows="4 " cols="80 " class="form-control " name="diagnostico" id="diagnostico" required><%= guias.diagnostico %></textarea>
                                     </div>
                                 </div>
                             </div>

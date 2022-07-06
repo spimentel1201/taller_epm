@@ -20,10 +20,6 @@ const vistaProfile = (req, res) => {
     res.render('profile')
 }
 
-/*const vistaUsers = (req, res) => {
-    res.render('users', userController.mostrar)
-}*/
-
 const vistaIcons = (req, res) => {
     res.render('icons')
 }
@@ -36,6 +32,13 @@ const vistaEditGuide = (req, res) => {
     res.render('editGuide')
 }
 
+const vistaLogin = (req, res) => {
+    res.render('login')
+}
+
+const vistaSignUp = (req, res) => {
+    res.render('signUp')
+}
 module.exports = {
     vistaPrincipal,
     vistaTables,
@@ -45,5 +48,7 @@ module.exports = {
     vistaIcons,
     /*vistaUsers,*/
     vistaCreateGuide,
-    vistaEditGuide
+    vistaEditGuide,
+    vistaLogin,
+    vistaSignUp
 }

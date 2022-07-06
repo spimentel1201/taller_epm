@@ -16,27 +16,27 @@
                             <thead class=" text-primary">
                                 <tr>
                                     <th>
-                                        Nombre
+                                        #Numero
                                     </th>
                                     <th>
-                                        Teléfono
+                                        Nombre
                                     </th>
                                     <th>
                                         Artefacto
                                     </th>
-                                    <th class="text-center">
+                                    <th class="text-left">
                                         Marca
                                     </th>
                                     <th>
                                         Modelo
                                     </th>
                                     <th>
-                                        Descripción
+                                        Fecha
                                     </th>
                                     <th>
                                         Estado
                                     </th>
-                                    <th class="text-center">
+                                    <th class="text-left">
                                         Acciones
                                     </th>
                                 </tr>
@@ -45,30 +45,30 @@
                                 <% guias.forEach((guia) => { %>
                                     <tr>
                                         <td>
+                                            <%= guia.codigo %>
+                                        </td>
+                                        <td>
                                             <%= guia.nombresC %>
                                                 <%= guia.apellidosC %>
                                         </td>
                                         <td>
-                                            <%= guia.telefono %>
-                                        </td>
-                                        <td>
                                             <%= guia.artefacto %>
                                         </td>
-                                        <td class="text-center">
+                                        <td class="text-left">
                                             <%= guia.marca %>
                                         </td>
                                         <td>
                                             <%= guia.modelo %>
                                         </td>
                                         <td>
-                                            <%= guia.descripcion %>
+                                            <%= guia.fecha_ing %>
                                         </td>
                                         <td>
                                             <%= guia.estado %>
                                         </td>
                                         <td class="text-center">
-                                            <a type="button" href="/editGuide/<%= guia._id %>" class="bi bi-pencil btn-sm"><i class="fas fa-edit"></i></a>
-                                            <a type="button" href="/deleteGuide/<%= guia._id %>" class=" bi bi-trash btn-sm"><i class="far fa-trash-alt"></i></a>
+                                            <a type="button" href="/editGuide/<%= guia._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="fas fa-edit"></i></a>
+                                            <a type="button" href="/deleteGuide/<%= guia._id %>" class="btn btn-outline-danger bi bi-trash btn-sm"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <% }) %>
