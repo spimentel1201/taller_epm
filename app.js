@@ -1,6 +1,10 @@
 const express = require('express')
 const path = require('path')
 const expressLayouts = require('express-ejs-layouts')
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+module.exports.bcrypt = bcrypt;
 
 const app = express()
 const db = require('./db')

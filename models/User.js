@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+    //const bcrypt = require('bcrypt')
+const bcrypt = require('../app.js').bcrypt
 
 const saltRounds = 10
 const Schema = mongoose.Schema

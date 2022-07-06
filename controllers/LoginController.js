@@ -1,4 +1,5 @@
 const User = require('../models/User')
+
 module.exports.mostrar = (req, res) => {
     User.find({}, (error, usuarios) => {
         if (error) {
