@@ -6,7 +6,7 @@
                     <div class="row align-items-center">
                         <div class="col">
                             <h4> Guías</h4>
-                            <a href="/createGuide"><button type="button" class="btn btn-dark">Crear Guía</button></a>
+                            <a href="/createGuide"><button type="button" class="btn btn-primary">Crear Guía</button></a>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                             <thead class=" text-primary">
                                 <tr>
                                     <th>
-                                        #Numero
+                                        #Num
                                     </th>
                                     <th>
                                         Nombre
@@ -60,15 +60,15 @@
                                         <td>
                                             <%= guia.modelo %>
                                         </td>
-                                        <td>
+                                        <td class="text-left">
                                             <%= guia.fecha_ing %>
                                         </td>
                                         <td>
                                             <%= guia.estado %>
                                         </td>
-                                        <td class="text-center">
-                                            <a type="button" href="/editGuide/<%= guia._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="fas fa-edit"></i></a>
-                                            <a type="button" href="/deleteGuide/<%= guia._id %>" class="btn btn-outline-danger bi bi-trash btn-sm"><i class="far fa-trash-alt"></i></a>
+                                        <td class="text-left">
+                                            <a type="button" href="/editGuide/<%= guia._id %>"><i class="btn btn-primary btn-sm">Ver</i></a>
+                                            <!--<a type="button" href="/deleteGuide/<%= guia._id %>"><i class="btn btn-primary btn-sm">Borrar</i></a>-->
                                         </td>
                                     </tr>
                                     <% }) %>

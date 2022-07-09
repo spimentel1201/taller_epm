@@ -35,7 +35,8 @@ module.exports.signIn = (req, res) => {
                         //res.status(500).send('Error')
                 } else if (result) {
                     //res.status(200).send('Autenticación exitosa.')
-                    return res.redirect('/guides')
+                    //return res.redirect('/guides')
+                    return res.render('home')
                 } else {
                     return res.status(500).json({
                         message: 'Error al mostrar los usuarios'

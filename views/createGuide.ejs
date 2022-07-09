@@ -2,135 +2,145 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
-                    <h5 class="title">Guia</h5>
-                </div>
+
                 <div class="card-body">
                     <form action="/create" method="POST">
-                        <div class="row">
-                            <div class="col-md-2 pr-md-1">
-                                <div class="form-group">
-                                    <label>Codigo Guia</label>
-                                    <input type="text" class="form-control" name="codigo" id="codigo" placeholder="5515" required>
+                        <fieldset>
+                            <legend>Datos Generales</legend>
+                            <div class="row">
+                                <div class="col-md-2 pr-md-1">
+                                    <div class="form-group">
+                                        <label>Codigo Guia</label>
+                                        <input type="text" class="form-control" name="codigo" id="codigo" maxlength="4" placeholder="5515" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 pr-md-1">
+                                    <div class="form-group">
+                                        <label>Nombres</label>
+                                        <input type="text" class="form-control" name="nombresC" id="nombresC" placeholder="Jesús" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 pl-md-1">
+                                    <div class="form-group">
+                                        <label>Apellidos</label>
+                                        <input type="text" class="form-control" name="apellidosC" id="apellidosC" placeholder="Gimenez">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-5 pr-md-1">
-                                <div class="form-group">
-                                    <label>Nombres</label>
-                                    <input type="text" class="form-control" name="nombresC" id="nombresC" placeholder="Jesús" required>
+                            <div class="row">
+                                <div class="col-md-2 pr-md-1">
+                                    <div class="form-group">
+                                        <label>DNI</label>
+                                        <input type="text" class="form-control" name="dni" id="dni" maxlength="8" placeholder="74447744">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-5 pl-md-1">
-                                <div class="form-group">
-                                    <label>Apellidos</label>
-                                    <input type="text" class="form-control" name="apellidosC" id="apellidosC" placeholder="Gimenez">
+                                <div class="col-md-2 px-md-1">
+                                    <div class="form-group">
+                                        <label>Teléfono</label>
+                                        <input type="text" class="form-control" name="telefono" id="telefono" maxlength="9" placeholder="985688545">
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2 pr-md-1">
-                                <div class="form-group">
-                                    <label>DNI</label>
-                                    <input type="text" class="form-control" name="dni" id="dni" placeholder="74447744">
-                                </div>
-                            </div>
-                            <div class="col-md-2 px-md-1">
-                                <div class="form-group">
-                                    <label>Teléfono</label>
-                                    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="985688545">
-                                </div>
-                            </div>
-                            <div class="col-md-8 pl-md-1">
-                                <div class="form-group">
-                                    <label>Dirección</label>
-                                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
+                                <div class="col-md-8 pl-md-1">
+                                    <div class="form-group">
+                                        <label>Dirección</label>
+                                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Artefacto</label>
-                                    <input type="text" class="form-control uppercase" id="artefacto" name="artefacto" placeholder="TV" required>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Datos del Artefacto</legend>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Artefacto</label>
+                                        <input type="text" class="form-control uppercase" id="artefacto" name="artefacto" placeholder="TV" required>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 pr-md-1">
-                                <div class="form-group">
-                                    <label>Marca</label>
-                                    <input type="text" class="form-control uppercase" id="marca" name="marca" placeholder="Marca" required>
+                            <div class="row">
+                                <div class="col-md-4 pr-md-1">
+                                    <div class="form-group">
+                                        <label>Marca</label>
+                                        <input type="text" class="form-control uppercase" id="marca" name="marca" placeholder="Marca" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 px-md-1">
+                                    <div class="form-group">
+                                        <label>Modelo</label>
+                                        <input type="text" class="form-control uppercase" id="modelo" name="modelo" placeholder="Modelo">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pl-md-1">
+                                    <div class="form-group">
+                                        <label>Serie</label>
+                                        <input type="text" class="form-control uppercase" id="serie" name="serie" placeholder="Serie">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 px-md-1">
-                                <div class="form-group">
-                                    <label>Modelo</label>
-                                    <input type="text" class="form-control uppercase" id="modelo" name="modelo" placeholder="Modelo">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Accesorios</label>
+                                        <textarea rows="4" cols="80" class="form-control" name="accesorios" id="accesorios" placeholder="Aquí se describen los accesorios que dejó como control, cables y demás"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Descripción</label>
+                                        <textarea rows="4" cols="80" class="form-control" name="descripcion" id="descripcion" placeholder="Aquí va la descripción del problema"></textarea>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 pl-md-1">
-                                <div class="form-group">
-                                    <label>Serie</label>
-                                    <input type="text" class="form-control uppercase" id="serie" name="serie" placeholder="Serie">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Datos de Ingreso</legend>
+                            <div class="row">
+                                <div class="col-md-4 pr-md-1">
+                                    <div class="form-group">
+                                        <label>Fecha Ingreso</label>
+                                        <input type="date" class="form-control" name="fecha_ing" id="fecha_ing" placeholder="25/04/2022" required>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Accesorios</label>
-                                    <textarea rows="4" cols="80" class="form-control" name="accesorios" id="accesorios" placeholder="Aquí se describen los accesorios que dejó como control, cables y demás">Deja cable de corriente y control.</textarea>
+                                <div class="col-md-4 px-md-1">
+                                    <div class="form-group">
+                                        <label>Monto</label>
+                                        <input type="text" name="monto" id="monto" class="form-control" placeholder="115.0">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Descripción</label>
-                                    <textarea rows="4" cols="80" class="form-control" name="descripcion" id="descripcion" placeholder="Aquí va la descripción del problema">No enciende solo sale audio.</textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 pr-md-1">
-                                <div class="form-group">
-                                    <label>Fecha Ingreso</label>
-                                    <input type="date" class="form-control" name="fecha_ing" id="fecha_ing" placeholder="25/04/2022" required>
-                                </div>
-                            </div>
-                            <div class="col-md-4 px-md-1">
-                                <div class="form-group">
-                                    <label>Monto</label>
-                                    <input type="text" name="monto" id="monto" class="form-control" placeholder="115.0">
-                                </div>
-                            </div>
-                            <div class="col-md-4 pl-md-1">
-                                <div class="form-group">
-                                    <label>Estado</label><br>
-                                    <select class="form-control" name="estado" id="estado">
+                                <div class="col-md-4 pl-md-1">
+                                    <div class="form-group">
+                                        <label>Estado</label><br>
+                                        <select class="form-control" name="estado" id="estado">
                                         <option value=""></option>
-                                        <option value="Entregado">Entregado</option>
                                         <option value="En revisión">En revisión</option>
+                                        <option value="Entregado">Entregado</option>
                                     </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-md-4 pr-md-1 ">
-                                <div class="form-group ">
-                                    <label>Fecha Entrega</label>
-                                    <input type="text " class="form-control " name="fecha_entrega" id="fecha_entrega" disabled>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Datos de Entrega</legend>
+                            <div class="row ">
+                                <div class="col-md-4 pr-md-1 ">
+                                    <div class="form-group ">
+                                        <label>Fecha Entrega</label>
+                                        <input type="text " class="form-control " name="fecha_entrega" id="fecha_entrega" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class=" form-group ">
+                                        <label>Diagnostico</label>
+                                        <textarea rows="4 " cols="80 " class="form-control " name="diagnostico" id="diagnostico" disabled></textarea>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class=" form-group ">
-                                    <label>Diagnostico</label>
-                                    <textarea rows="4 " cols="80 " class="form-control " name="diagnostico" id="diagnostico" disabled></textarea>
-                                </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-fill btn-primary">Registrar</button>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-fill btn-primary">Registrar</button>
-                        </div>
+                        </fieldset>
                     </form>
                 </div>
                 <!--<div class="card-footer">
@@ -148,16 +158,16 @@
                             <div class="block block-three"></div>
                             <div class="block block-four"></div>
                             <a href="javascript:void(0)">
-                                <img class="avatar" src="/assets/img/emilyz.jpg" alt="...">
-                                <h5 class="title">Mike Andrew</h5>
+                                <img class="avatar" src="/assets/img/default-avatar.png" alt="...">
+                                <h5 class="title">Usuario</h5>
                             </a>
                             <p class="description">
-                                Ceo/Co-Founder
+                                Administrador
                             </p>
                         </div>
                     </p>
                     <div class="card-description">
-                        Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+
                     </div>
                 </div>
                 <div class="card-footer">

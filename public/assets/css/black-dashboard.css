@@ -15618,15 +15618,15 @@ hr {
 .card-tasks .card-body .table>thead>tr>td,
 .card-tasks .card-body .table>tbody>tr>td,
 .card-tasks .card-body .table>tfoot>tr>td {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 .table>thead>tr>th {
     border-bottom-width: 1px;
     font-size: 12px;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 400;
     border: 0;
     color: rgba(255, 255, 255, 0.7);
 }
