@@ -12,6 +12,9 @@ const db = require('./db')
 app.get('/', (req, res) => {
     res.render('login')
 })
+app.get('/register', (req, res) => {
+    res.redirect('signUp')
+})
 app.set('view engine', 'ejs')
 app.use(expressLayouts)
 
@@ -33,6 +36,8 @@ app.use(guias)
 
 const productos = require('./routes/product_router')
 app.use(productos)
+
+
 
 const host = '0.0.0.0';
 const port = process.env.PORT || 5000;
