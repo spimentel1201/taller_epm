@@ -37,7 +37,19 @@ const vistaLogin = (req, res) => {
 }
 
 const vistaSignUp = (req, res) => {
-    res.render('signUp')
+        res.render('signUp')
+    }
+    /*
+    const vistaBudget = (req, res) => {
+        res.render('budgets')
+    }*/
+
+const vistaCreateBudget = (req, res) => {
+    res.render('createBudget')
+}
+
+const vistaRecordPayment = (req, res) => {
+    res.render('recordPayment')
 }
 module.exports = {
     vistaPrincipal,
@@ -50,5 +62,7 @@ module.exports = {
     vistaCreateGuide,
     vistaEditGuide,
     vistaLogin,
-    vistaSignUp
+    vistaSignUp,
+    vistaCreateBudget,
+    vistaRecordPayment
 }

@@ -1,0 +1,62 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-title"> Presupuestos</h4>
+                    <a href="/createBudget"><button type="button" class="btn btn-primary">Nuevo Presupuesto</button></a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table tablesorter " id="">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th>
+                                        Código de Guía
+                                    </th>
+                                    <th>
+                                        Nombre Completo
+                                    </th>
+                                    <th>
+                                        Artefacto
+                                    </th>
+                                    <th>
+                                        Monto
+                                    </th>
+                                    <th>
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% presupuestos.forEach((presupuesto) => { %>
+                                    <tr>
+                                        <td>
+                                            <%= presupuesto.codigo_guia %>
+                                        </td>
+                                        <td>
+                                            <%= presupuesto.nombre %>
+                                        </td>
+                                        <td>
+                                            <%= presupuesto.artefacto %>
+                                        </td>
+                                        <td>
+                                            <%= presupuesto.monto %>
+                                        </td>
+                                        <td>
+                                            <%= presupuesto.estado %>
+                                        </td>
+                                        <td class="text-center">
+                                            <a type="button" href="/showBudget/<%= presupuesto._id %>" class="btn btn-outline-light bi bi-eye btn-sm">Ver<i class="fas fa-eye"></i></a>
+                                            <a type="button" href="/editBudget/<%= presupuesto._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="far fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

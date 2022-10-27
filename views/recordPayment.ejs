@@ -1,0 +1,99 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <legend>Búsqueda</legend>
+                    <div id="navbar-search-autocomplete" class="btn-group">
+                        <input type="search" id="form1" class="form-control" />
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                    <form action="/create" method="POST">
+                        <fieldset>
+                            <legend>Datos de Guia</legend>
+                            <div class="row">
+                                <div class="col-md-2 pr-md-1">
+                                    <div class="form-group">
+                                        <label>Codigo Guia</label>
+                                        <input type="text" class="form-control" name="codigo_guia" id="codigo_guia" maxlength="4" placeholder="5515" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 pr-md-1">
+                                    <div class="form-group">
+                                        <label>Cliente</label>
+                                        <input type="text" class="form-control" name="nombresC" id="nombresC" placeholder="Jesús" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 pl-md-1">
+                                    <div class="form-group">
+                                        <label>Artefacto</label>
+                                        <input type="text" class="form-control" name="apellidosC" id="apellidosC" placeholder="Gimenez">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Información del Pago</legend>
+                            <div class="row">
+                                <div class="col-md-4 pr-md-1">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Monto Total</label>
+                                        <input type="text " name="monto_total" id="monto_total" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pr-md-1">
+                                    <div class="form-group">
+                                        <label>A cuenta</label>
+                                        <input type="text " name="a_cuenta" id="a_cuenta" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <div class="modal-footer">
+                            <button type="submit" onclick='history.back()' class="btn btn-secondary">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Registrar Pago</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 ">
+            <div class="card card-user ">
+                <div class="card-body ">
+                    <p class="card-text ">
+                        <div class="author ">
+                            <div class="block block-one "></div>
+                            <div class="block block-two "></div>
+                            <div class="block block-three "></div>
+                            <div class="block block-four "></div>
+                            <a href="javascript:void(0) ">
+                                <img class="avatar " src="/assets/img/default-avatar.png " alt="... ">
+                                <h5 class="title ">Usuario</h5>
+                            </a>
+                            <p class="description ">
+                                Administrador
+                            </p>
+                        </div>
+                    </p>
+                    <div class="card-description ">
+
+                    </div>
+                </div>
+                <div class="card-footer ">
+                    <div class="button-container ">
+                        <button href="javascript:void(0) " class="btn btn-icon btn-round btn-facebook ">
+                <i class="fab fa-facebook "></i>
+              </button>
+                        <button href="javascript:void(0) " class="btn btn-icon btn-round btn-twitter ">
+                <i class="fab fa-twitter "></i>
+              </button>
+                        <button href="javascript:void(0) " class="btn btn-icon btn-round btn-google ">
+                <i class="fab fa-google-plus "></i>
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
