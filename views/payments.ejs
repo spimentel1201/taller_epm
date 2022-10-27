@@ -1,0 +1,65 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-title">Pagos</h4>
+                    <a href="/recordPayment"><button type="button" class="btn btn-primary">Registrar Pago</button></a>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table tablesorter " id="">
+                            <thead class=" text-primary">
+                                <tr>
+                                    <th>
+                                        Código de Guía
+                                    </th>
+                                    <th>
+                                        Nombre Completo
+                                    </th>
+                                    <th>
+                                        Artefacto
+                                    </th>
+                                    <th>
+                                        Monto Total
+                                    </th>
+                                    <th>
+                                        A cuenta
+                                    </th>
+                                    <th>
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% pagos.forEach((pago) => { %>
+                                    <tr>
+                                        <td>
+                                            <%= pago.codigo_guia %>
+                                        </td>
+                                        <td>
+                                            <%= pago.codigo_guia %>
+                                        </td>
+                                        <td>
+                                            <%= pago.codigo_guia %>
+                                        </td>
+                                        <td>
+                                            <%= pago.total %>
+                                        </td>
+                                        <td>
+                                            <%= pago.a_cuenta %>
+                                        </td>
+                                        <td class="text-center">
+                                            <a type="button" href="/showBudget/<%= pago._id %>" class="btn btn-outline-light bi bi-eye btn-sm"><i class="fas fa-eye"></i></a>
+                                            <a type="button" href="/editBudget/<%= pago._id %>" class="btn btn-outline-light bi bi-pencil btn-sm"><i class="far fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

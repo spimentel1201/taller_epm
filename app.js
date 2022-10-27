@@ -37,6 +37,12 @@ app.use(guias)
 const productos = require('./routes/product_router')
 app.use(productos)
 
+const presupuestos = require('./routes/budget_router')
+app.use(presupuestos)
+
+const pagos = require('./routes/payment_router')
+app.use(pagos)
+
 
 
 const host = '0.0.0.0';

@@ -52,5 +52,5 @@ module.exports.editGuide = async(req, res) => {
     const { id } = req.params
     const guias = await Invoice.findById(id).lean()
     console.log(guias)
-    return res.render('editGuide', { guias: guias })
+    return res.render('editGuide2', { guias: guias })
 }
