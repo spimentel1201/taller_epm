@@ -25,7 +25,7 @@ module.exports.mostrar = (req, res) => {
         return res.render('budgets', { presupuestos: presupuestos })
     })
 }
-module.exports.create = async(req, res) => {
+module.exports.createBudget = async(req, res) => {
 
     try {
         const { codigo_guia, nombre, artefacto, monto_total, fecha, detalle } = req.body
