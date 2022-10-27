@@ -25,7 +25,7 @@ module.exports.mostrar = (req, res) => {
         return res.render('payments', { pagos: pagos })
     })
 }
-module.exports.create = async(req, res) => {
+module.exports.createPayment = async(req, res) => {
 
     try {
         const { codigo_guia, monto_total, a_cuenta } = req.body

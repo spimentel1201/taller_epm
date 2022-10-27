@@ -48,7 +48,7 @@
                     <li class="active ">
                         <a href="/products ">
                             <i class="tim-icons icon-laptop "></i>
-                            <p>Productos</p>
+                            <p>Precios</p>
                         </a>
                     </li>
                     <li class="active ">
@@ -321,6 +321,50 @@
                 "language": {
                     "lengthMenu": "Mostrando _MENU_ registros por página",
                     "zeroRecords": "No se encontraron registros - sorry",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    "search": "Buscar:",
+                    "loadingRecords": "Cargando...",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                }
+            });
+        });
+        $(document).ready(function() {
+            $('#budgets').DataTable({
+                order: [
+                    [0, 'desc']
+                ],
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "No se encontraron registros",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    "search": "Buscar:",
+                    "loadingRecords": "Cargando...",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                }
+            });
+        });
+        $(document).ready(function() {
+            $('#payments').DataTable({
+                order: [
+                    [0, 'desc']
+                ],
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "No se encontraron registros",
                     "info": "Mostrando página _PAGE_ de _PAGES_",
                     "infoEmpty": "No hay registros",
                     "infoFiltered": "(filtrado de _MAX_ registros totales)",
