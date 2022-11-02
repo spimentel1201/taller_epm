@@ -4,57 +4,140 @@
             <div class="card">
                 <div class="card-body">
                     <legend>Búsqueda</legend>
-                    <div id="navbar-search-autocomplete" class="btn-group">
-                        <input type="search" id="form1" class="form-control" />
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                    <form action="/createPayment" method="POST">
-                        <fieldset>
-                            <legend>Datos de Guia</legend>
-                            <div class="row">
-                                <div class="col-md-2 pr-md-1">
-                                    <div class="form-group">
-                                        <label>Codigo Guia</label>
-                                        <input type="text" class="form-control" name="codigo_guia" id="codigo_guia" maxlength="4" placeholder="5515" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 pr-md-1">
-                                    <div class="form-group">
-                                        <label>Cliente</label>
-                                        <input type="text" class="form-control" name="nombresC" id="nombresC" placeholder="Jesús" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 pl-md-1">
-                                    <div class="form-group">
-                                        <label>Artefacto</label>
-                                        <input type="text" class="form-control" name="apellidosC" id="apellidosC" placeholder="Gimenez">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Información del Pago</legend>
-                            <div class="row">
-                                <div class="col-md-4 pr-md-1">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Monto Total</label>
-                                        <input type="text " name="monto_total" id="monto_total" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 pr-md-1">
-                                    <div class="form-group">
-                                        <label>A cuenta</label>
-                                        <input type="text " name="a_cuenta" id="a_cuenta" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </fieldset>
-                        <div class="modal-footer">
-                            <button type="submit" onclick='history.back()' class="btn btn-secondary">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Registrar Pago</button>
+                    <form action="/findBudget" method="POST">
+                        <div id="navbar-search-autocomplete" class="btn-group">
+                            <input type="search" id="find" name="find" class="form-control" />
+                            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                         </div>
                     </form>
+                    <% if (typeof budgetData != "undefined") {  %>
+                        <form action="/createPayment" method="POST">
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-2 pr-md-1">
+                                        <div class="form-group">
+                                            <label>Codigo Guia</label>
+                                            <input type="text" class="form-control" value="<%= budgetData.code %>" name="codigo_guia" id="codigo_guia" maxlength="4" placeholder="5515" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 pr-md-1">
+                                        <div class="form-group">
+                                            <label>Cliente</label>
+                                            <input type="text" class="form-control" value="<%= budgetData.client %>" name="nombre" id="nombre" placeholder="Jesús" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 pl-md-1">
+                                        <div class="form-group">
+                                            <label>Artefacto</label>
+                                            <input type="text" class="form-control" value="<%= budgetData.gadget %>" name="artefacto" id="artefacto" placeholder="Gimenez">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Información del Pago</legend>
+                                <div class="row">
+                                    <div class="col-md-4 pr-md-1">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Monto Total</label>
+                                            <input type="text " name="monto_total" id="monto_total" value="<%= budgetData.total %>" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pr-md-1">
+                                        <div class="form-group">
+                                            <label>A cuenta</label>
+                                            <input type="text " name="a_cuenta" id="a_cuenta" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pr-md-1">
+                                        <div class="form-group">
+                                            <label>Saldo</label>
+                                            <input type="text " name="saldo" id="saldo" class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        let monto_totalX = document.getElementById("monto_total")
+                                        let a_cuentaX = document.getElementById("a_cuenta")
+                                        let saldoX = document.getElementById("saldo")
+
+                                        a_cuenta.addEventListener("change", () => {
+                                            const result = document.querySelector('.saldo');
+                                            saldoX.value = parseFloat(monto_totalX.value) - parseFloat(a_cuentaX.value)
+                                            result.innerHTML = saldoX.value
+                                        })
+                                    </script>
+                                </div>
+
+                            </fieldset>
+                            <div class="modal-footer">
+                                <button type="submit" onclick='history.back()' class="btn btn-secondary">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Registrar Pago</button>
+                            </div>
+                            <% } else { %>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-md-2 pr-md-1">
+                                            <div class="form-group">
+                                                <label>Codigo Guia</label>
+                                                <input type="text" class="form-control" name="codigo_guia" id="codigo_guia" maxlength="4" placeholder="5515" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 pr-md-1">
+                                            <div class="form-group">
+                                                <label>Cliente</label>
+                                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Jesús" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 pl-md-1">
+                                            <div class="form-group">
+                                                <label>Artefacto</label>
+                                                <input type="text" class="form-control" name="artefacto" id="artefacto" placeholder="Gimenez">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Información del Pago</legend>
+                                    <div class="row">
+                                        <div class="col-md-4 pr-md-1">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Monto Total</label>
+                                                <input type="text " name="monto_total" id="monto_total" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 pr-md-1">
+                                            <div class="form-group">
+                                                <label>A cuenta</label>
+                                                <input type="text " name="a_cuenta" id="a_cuenta" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 pr-md-1">
+                                            <div class="form-group">
+                                                <label>Saldo</label>
+                                                <input type="text " name="saldo" id="saldo" class="form-control" disabled>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            let monto_totalY = document.getElementById("monto_total")
+                                            let a_cuentaY = document.getElementById("a_cuenta")
+                                            let saldoY = document.getElementById("saldo")
+
+                                            a_cuenta.addEventListener("change", () => {
+                                                saldoY.value = parseFloat(monto_totalY.value) - parseFloat(a_cuentaY.value)
+
+                                            })
+                                        </script>
+                                    </div>
+
+                                </fieldset>
+                                <div class="modal-footer">
+                                    <button type="submit" onclick='history.back()' class="btn btn-secondary">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Registrar Pago</button>
+                                </div>
+                                <% } %>
+                        </form>
                 </div>
             </div>
         </div>

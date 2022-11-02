@@ -30,7 +30,7 @@ module.exports.createBudget = async(req, res) => {
     try {
         const { codigo_guia, nombre, artefacto, monto_total, fecha, detalle } = req.body
 
-        const budget = new Budget({ codigo_guia, nombre, artefacto, monto_total, fecha, detalle });
+        const budget = new Budget({ codigo_guia, nombre, artefacto, monto_total, fecha, detalle })
 
         //res.status(201).json(budget)
         //const budget = Budget(req.body)
@@ -53,4 +53,37 @@ module.exports.editbudget = async(req, res) => {
     const presupuestos = await Budget.findById(id).lean()
     console.log(presupuestos)
     return res.render('editbudget2', { presupuestos: presupuestos })
+}
+
+module.exports.findBudget = async(req, res) => {
+    const { find } = req.body
+    console.log(find)
+    Budget.findOne({ codigo_guia: find }, (error, budget) => {
+        if (error) {
+            return res.status(500).json({
+                message: 'Error'
+            })
+        } else if (!budget) {
+            return res.status(500).json({
+                message: 'La guía no existe'
+            })
+        } else {
+            let fullname = budget.nombre
+            let fullgadget = budget.artefacto
+            let total = budget.monto_total
+            const budgetData = {
+                code: budget.codigo_guia,
+                client: fullname,
+                gadget: fullgadget,
+                total: total
+            }
+            console.log(budgetData.client)
+            console.log(budgetData.total)
+            res.render('recordPayment', {
+                budgetData: budgetData
+            })
+        }
+        /*return res.render('guides', { usuarios: user })*/
+        /*return res.redirect('/guides')*/
+    })
 }

@@ -15098,7 +15098,7 @@ hr {
 
 .table>thead>tr>th {
     border-bottom-width: 1px;
-    font-size: 12px;
+    font-size: 8px;
     text-transform: uppercase;
     font-weight: 700;
     border: 0;
@@ -15203,7 +15203,7 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .dataTables_wrapper .form-control-sm {
-    font-size: 10px
+    font-size: 8px
 }
 
 .form-check {

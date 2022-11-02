@@ -5,35 +5,60 @@
 
                 <div class="card-body">
                     <legend>Búsqueda</legend>
-
-                    <div id="navbar-search-autocomplete" class="btn-group">
-                        <input type="search" id="form1" class="form-control" />
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
+                    <form action="/findGuide" method="POST">
+                        <div id="navbar-search-autocomplete" class="btn-group">
+                            <input type="search" id="find" name="find" class="form-control" />
+                            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
                     <form action="/createBudget" method="POST">
                         <fieldset>
                             <!-- Search form -->
                             <legend>Datos de Guia</legend>
-                            <div class="row">
-                                <div class="col-md-2 pr-md-1">
-                                    <div class="form-group">
-                                        <label>Codigo Guia</label>
-                                        <input type="text" class="form-control" name="codigo_guia" id="codigo_guia" maxlength="4" placeholder="5515" required>
+                            <% if (typeof guideData != "undefined") {  %>
+                                <div class="row">
+                                    <div class="col-md-2 pr-md-1">
+                                        <div class="form-group">
+                                            <label>Codigo Guia</label>
+                                            <input type="text" class="form-control" value="<%= guideData.code %>" name="codigo_guia" id="codigo_guia" maxlength="4" placeholder="5515" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 pr-md-1">
+                                        <div class="form-group">
+                                            <label>Cliente</label>
+                                            <input type="text" class="form-control" value="<%= guideData.client %>" name="nombre" id="nombre" placeholder="Jesús" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 pl-md-1">
+                                        <div class="form-group">
+                                            <label>Artefacto</label>
+                                            <input type="text" class="form-control" value="<%= guideData.gadget %>" name="artefacto" id="artefacto" placeholder="Gimenez">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-5 pr-md-1">
-                                    <div class="form-group">
-                                        <label>Cliente</label>
-                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Jesús" required>
+
+                                <% } else { %>
+                                    <div class="row">
+                                        <div class="col-md-2 pr-md-1">
+                                            <div class="form-group">
+                                                <label>Codigo Guia</label>
+                                                <input type="text" class="form-control" name="codigo_guia" id="codigo_guia" maxlength="4" placeholder="5515" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 pr-md-1">
+                                            <div class="form-group">
+                                                <label>Cliente</label>
+                                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Jesús" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 pl-md-1">
+                                            <div class="form-group">
+                                                <label>Artefacto</label>
+                                                <input type="text" class="form-control" name="artefacto" id="artefacto" placeholder="Gimenez">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5 pl-md-1">
-                                    <div class="form-group">
-                                        <label>Artefacto</label>
-                                        <input type="text" class="form-control" name="artefacto" id="artefacto" placeholder="Gimenez">
-                                    </div>
-                                </div>
-                            </div>
+                                    <% } %>
                         </fieldset>
                         <fieldset>
                             <legend>Información de Presupuesto</legend>
@@ -47,7 +72,7 @@
                                 <div class="col-md-3 pr-md-1 ">
                                     <div class="form-group ">
                                         <label>Fecha</label>
-                                        <input type="text " class="form-control " name="fecha" id="fecha" placeholder="01/12/2022" disabled>
+                                        <input type="text " class="form-control " name="fecha" id="fecha" disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-5">

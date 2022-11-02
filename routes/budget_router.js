@@ -6,4 +6,5 @@ router.get('/budgets', budgetController.mostrar)
 router.post('/createBudget', budgetController.createBudget)
 router.post('/edit/:id', budgetController.edit)
 router.get('/editBudget/:id', budgetController.editbudget)
+router.post('/findBudget', budgetController.findBudget)
 module.exports = router

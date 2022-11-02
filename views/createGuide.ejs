@@ -4,6 +4,44 @@
             <div class="card">
 
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-5 pr-md-1">
+                            <label>Ingrese DNI</label>
+                            <div class="form-group">
+                                <input type="text" class="d-inline-block align-middle" name="dni" id="dni" maxlength="8" placeholder="74447744">
+                                <button class="btn btn-primary d-inline-block" onclick="consulta()"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        const API_URL = "https://dniruc.apisperu.com/api/v1/dni/";
+                        const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InRoZWdyb3p6bzNAZ21haWwuY29tIn0.RkK8i-UYtSGENwPuym9FHexWQkmvmI7VTkbA8y1N7zs'
+                        const dni = document.getElementById('dni')
+                        const nombres = document.querySelector(".nombresC")
+                        const apellidos = document.querySelector(".apellidosC")
+
+                        const boton = document.getElementById('busqueda')
+
+
+                        function consulta() {
+                            fetch(`https://dniruc.apisperu.com/api/v1/dni/${dni.value}?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InRoZWdyb3p6bzNAZ21haWwuY29tIn0.RkK8i-UYtSGENwPuym9FHexWQkmvmI7VTkbA8y1N7zs`)
+                                .then((response) => response.json())
+                                .then(data => {
+                                    const da = data.nombres
+                                    const de = data.apellidoPaterno + " " + data.apellidoMaterno
+                                    console.log(da)
+                                    console.log(da)
+                                    document.getElementById("nombresC").value = da
+                                    document.getElementById("apellidosC").value = de
+                                })
+                        }
+                    </script>
+
                     <form action="/create" method="POST">
                         <fieldset>
                             <legend>Datos Generales</legend>
@@ -28,19 +66,14 @@
                                 </div>
                             </div>
                             <div class="row">
+
                                 <div class="col-md-2 pr-md-1">
-                                    <div class="form-group">
-                                        <label>DNI</label>
-                                        <input type="text" class="form-control" name="dni" id="dni" maxlength="8" placeholder="74447744">
-                                    </div>
-                                </div>
-                                <div class="col-md-2 px-md-1">
                                     <div class="form-group">
                                         <label>Teléfono</label>
                                         <input type="text" class="form-control" name="telefono" id="telefono" maxlength="9" placeholder="985688545">
                                     </div>
                                 </div>
-                                <div class="col-md-8 pl-md-1">
+                                <div class="col-md-8 pr-md-1">
                                     <div class="form-group">
                                         <label>Dirección</label>
                                         <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
