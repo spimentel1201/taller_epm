@@ -13,8 +13,6 @@ module.exports.mostrar = (req, res) => {
 
 module.exports.signIn = (req, res) => {
     const { email, password } = req.body;
-    //console.log("correo enviada: " + email)
-    //console.log("contra enviada: " + password)
     User.findOne({ correo: email }, (error, user) => {
         if (error) {
             return res.status(500).json({

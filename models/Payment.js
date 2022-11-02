@@ -2,9 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const paymentSchema = new Schema({
-    codigo_guia: Number,
-    monto_total: Number,
-    a_cuenta: Number,
+    codigo_guia: { type: Number, required: true },
+    monto_total: { type: Number, required: true },
+    a_cuenta: { type: Number, required: true },
+    fecha: { type: Date, default: Date.now },
 }, { timestamps: true, versionKey: false })
 
 module.exports = mongoose.model('payments', paymentSchema)

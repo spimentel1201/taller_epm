@@ -54,3 +54,63 @@ module.exports.editGuide = async(req, res) => {
     console.log(guias)
     return res.render('editGuide2', { guias: guias })
 }
+module.exports.findGuide = async(req, res) => {
+    const { find } = req.body
+    console.log(find)
+    Invoice.findOne({ codigo: find }, (error, guide) => {
+        if (error) {
+            return res.status(500).json({
+                message: 'Error'
+            })
+        } else if (!guide) {
+            return res.status(500).json({
+                message: 'La guía no existe'
+            })
+        } else {
+            let fullname = [guide.nombresC, guide.apellidosC].join(' ');
+            let fullgadget = [guide.artifact, guide.marca, guide.modelo].join(' ');
+            const guideData = {
+                code: guide.codigo,
+                client: fullname,
+                gadget: fullgadget
+            }
+            console.log(guideData.client)
+            res.render('createBudget', {
+                guideData: guideData
+            })
+        }
+        /*return res.render('guides', { usuarios: user })*/
+        /*return res.redirect('/guides')*/
+    })
+}
+
+module.exports.findGuideP = async(req, res) => {
+    const { find } = req.body
+    console.log(find)
+    Invoice.findOne({ codigo: find }, (error, guide) => {
+        if (error) {
+            return res.status(500).json({
+                message: 'Error'
+            })
+        } else if (!guide) {
+            return res.status(500).json({
+                message: 'La guía no existe'
+            })
+        } else {
+            let fullname = [guide.nombresC, guide.apellidosC].join(' ');
+            let fullgadget = [guide.artifact, guide.marca, guide.modelo].join(' ');
+            let total = guide.total
+            const guideData = {
+                code: guide.codigo,
+                client: fullname,
+                gadget: fullgadget
+            }
+            console.log(guideData.client)
+            res.render('recordPayment', {
+                guideData: guideData
+            })
+        }
+        /*return res.render('guides', { usuarios: user })*/
+        /*return res.redirect('/guides')*/
+    })
+}
