@@ -114,3 +114,5 @@ module.exports.findGuideP = async(req, res) => {
         /*return res.redirect('/guides')*/
     })
 }
+
+module.exports.getGuidesPerMonth = async(req, res) => {}
