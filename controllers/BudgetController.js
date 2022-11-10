@@ -79,6 +79,11 @@ module.exports.findBudget = async(req, res) => {
             }
             console.log(budgetData.client)
             console.log(budgetData.total)
+            console.log(budget.fecha)
+            console.log(budget.fecha.getMonth())
+            let dd = new Date()
+            let mont = dd.getMonth()
+            console.log(mont)
             res.render('recordPayment', {
                 budgetData: budgetData
             })

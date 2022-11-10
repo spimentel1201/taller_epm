@@ -2,23 +2,37 @@ const express = require('express')
 const path = require('path')
 const expressLayouts = require('express-ejs-layouts')
 const bcrypt = require('bcrypt');
+const session = require('express-session')
 const saltRounds = 10;
 
 module.exports.bcrypt = bcrypt;
 
 const app = express()
 const db = require('./db')
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}))
 
 app.get('/', (req, res) => {
-    res.render('login')
+    if (req.session.loggedin == true) {
+        res.render('layout', { name: req.session.name })
+    } else {
+        res.render('login')
+    }
+
 })
 app.get('/register', (req, res) => {
-    res.redirect('signUp')
+    res.render('signUp')
 })
+
+
 app.set('view engine', 'ejs')
 app.use(expressLayouts)
 
 app.use(express.static(path.join(__dirname, 'public')))
+
 app.use(express.urlencoded({ extended: true }));
 
 

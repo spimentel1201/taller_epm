@@ -46,7 +46,7 @@ module.exports.edit = async(req, res) => {
         new: true
     }).exec()
     console.log(req.body)
-    return res.redirect('/')
+    return res.redirect('/guides')
 }
 module.exports.editGuide = async(req, res) => {
     const { id } = req.params
@@ -112,6 +112,19 @@ module.exports.findGuideP = async(req, res) => {
         }
         /*return res.render('guides', { usuarios: user })*/
         /*return res.redirect('/guides')*/
+    })
+}
+
+module.exports.getGuidesPerMonth = (req, res) => {
+    const dd = new Date()
+    dd.getMonth()
+    Invoice.find({}, (error, guias) => {
+        if (error) {
+            return res.status(500).json({
+                message: 'Error al mostrar las guias'
+            })
+        }
+        return res.render('guides', { guias: guias })
     })
 }
 
