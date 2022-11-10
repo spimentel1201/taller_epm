@@ -1,14 +1,19 @@
 const User = require('../models/User')
 
 module.exports.mostrar = (req, res) => {
-    User.find({}, (error, usuarios) => {
-        if (error) {
-            return res.status(500).json({
-                message: 'Error al mostrar los usuarios'
-            })
-        }
-        return res.render('/', { usuarios: usuarios })
-    })
+    if (req.session.loggedin != true) {
+        User.find({}, (error, usuarios) => {
+            if (error) {
+                return res.status(500).json({
+                    message: 'Error al mostrar los usuarios'
+                })
+            }
+            res.render('login', { usuarios: usuarios })
+        })
+    } else {
+        res.redirect('/')
+    }
+
 }
 
 module.exports.signIn = (req, res) => {
@@ -32,12 +37,21 @@ module.exports.signIn = (req, res) => {
                         })
                         //res.status(500).send('Error')
                 } else if (result) {
-                    //res.status(200).send('Autenticación exitosa.')
-                    //return res.redirect('/guides')
-                    return res.render('home')
+                    req.session.loggedin = true
+                    req.session.name = user.nombres
+                    const userr = {
+
+                            name: user.nombres
+
+                        }
+                        //res.status(200).send('Autenticación exitosa.')
+                        //return res.redirect('/guides')
+                        //console.log(userr.name)
+                    console.log(req.session.name)
+                    return res.render('home', { name: req.session.name })
                 } else {
                     return res.status(500).json({
-                        message: 'Error al mostrar los usuarios'
+                        message: 'Ocurrió un error'
                     })
                 }
             })
@@ -60,5 +74,17 @@ module.exports.signUpc = async(req, res) => {
 }
 
 module.exports.mostrarS = (req, res) => {
-    return res.redirect('/signUp')
+    if (req.session.loggedin != true) {
+        res.render('signUp')
+    } else {
+        res.redirect('/')
+    }
+}
+
+module.exports.logout = async(req, res) => {
+    if (req.session.loggedin == true) {
+        req.session.destroy()
+    }
+    res.redirect('/')
+
 }
