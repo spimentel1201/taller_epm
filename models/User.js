@@ -6,12 +6,29 @@ const saltRounds = 10
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
-    nombres: String,
-    apellidos: String,
+    nombres: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    apellidos: {
+        type: String,
+        required: true,
+        trim: true
+    },
     correo: { type: String, required: true, unique: true },
     contraseña: { type: String, required: true },
-    rol: String,
-    estado: String
+    rol: {
+        type: String,
+        enum: {
+            values: ['Admin', 'Trabajador', 'Cliente'],
+            message: '{VALUE} no está permitido.'
+        }
+    },
+    isActive: {
+        type: Boolean,
+        default: true
+    }
 }, { versionKey: false })
 
 userSchema.pre('save', function(next) {

@@ -1,4 +1,5 @@
 const Budget = require('../models/Budget')
+const Invoice = require('../models/Invoice')
 module.exports.mostrar2 = (req, res, next) => {
     var perPage = 9
     var page = req.params.page || 1
@@ -34,6 +35,9 @@ module.exports.createBudget = async(req, res) => {
 
         //res.status(201).json(budget)
         //const budget = Budget(req.body)
+        const updated = Invoice.updateOne({ codigo: req.body.codigo_guia }, { $set: { monto: req.body.monto_total } })
+        console.log("---------------------------------")
+        console.log(updated)
         const budgetSaved = await budget.save()
         console.log(budget)
         return res.redirect('/budgets')
@@ -77,13 +81,6 @@ module.exports.findBudget = async(req, res) => {
                 gadget: fullgadget,
                 total: total
             }
-            console.log(budgetData.client)
-            console.log(budgetData.total)
-            console.log(budget.fecha)
-            console.log(budget.fecha.getMonth())
-            let dd = new Date()
-            let mont = dd.getMonth()
-            console.log(mont)
             res.render('recordPayment', {
                 budgetData: budgetData
             })

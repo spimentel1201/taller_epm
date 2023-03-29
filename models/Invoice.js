@@ -3,9 +3,18 @@ const Schema = mongoose.Schema
 
 const invoiceSchema = new Schema({
     codigo: Number,
-    nombresC: String,
-    apellidosC: String,
-    telefono: Number,
+    nombresC: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    apellidosC: {
+        type: String,
+        trim: true
+    },
+    telefono: {
+        type: Number,
+    },
     dni: Number,
     direccion: String,
     artefacto: String,
@@ -15,7 +24,13 @@ const invoiceSchema = new Schema({
     accesorios: String,
     descripcion: String,
     fecha_ing: String,
-    estado: String,
+    estado: {
+        type: String,
+        enum: {
+            values: ['Recibido', 'En Revisión', 'Listo', 'Entregado'],
+            message: '{VALUE} no está permitido.'
+        }
+    },
     monto: Number,
     fecha_entrega: String,
     diagnostico: String,

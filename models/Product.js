@@ -9,8 +9,16 @@ codigo: String,
 }, { versionKey: false }) 
 */
 const productSchema = new Schema({
-    codigo: String,
-    nombre: String,
+    codigo: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    nombre: {
+        type: String,
+        required: true,
+        trim: true
+    },
     precio_compra: Number,
     precio_v1: Number,
     precio_v2: Number,
